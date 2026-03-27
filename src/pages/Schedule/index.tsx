@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, Button, Space, Badge, Tooltip, Popover } from 'antd';
+import { Card, Button, Space, Badge, Tooltip, Popover, type PopoverProps } from 'antd';
 import { LeftOutlined, RightOutlined, PlusOutlined, CloseOutlined } from '@ant-design/icons';
 import { useTheme } from '../../contexts/ThemeContext';
 import './Schedule.css';
@@ -74,6 +74,7 @@ const Schedule: React.FC = () => {
   const { isDark } = useTheme();
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedCourse, setSelectedCourse] = useState<typeof mockCourses[0] | null>(null);
+  const [openPopoverId, setOpenPopoverId] = useState<number | null>(null);
 
   const getDaysInMonth = (date: Date) => {
     const year = date.getFullYear();
@@ -103,7 +104,11 @@ const Schedule: React.FC = () => {
 
   const hours = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
-  const renderCoursePopover = (course: typeof mockCourses[0]) => (
+  const handlePopoverChange: PopoverProps['onOpenChange'] = (open, courseId) => {
+    setOpenPopoverId(open ? courseId : null);
+  };
+
+  const renderCoursePopover = (course: typeof mockCourses[0], onClose: () => void) => (
     <div className="course-popover">
       <h4 className="course-title">{course.title}</h4>
       <div className="course-info">
@@ -119,7 +124,14 @@ const Schedule: React.FC = () => {
         <span className="info-value">{course.teacher}</span>
       </div>
       <Space className="course-actions">
-        <Button size="small" type="primary">
+        <Button
+          size="small"
+          type="primary"
+          onClick={() => {
+            setSelectedCourse(course);
+            onClose();
+          }}
+        >
           设置考勤
         </Button>
         <Button size="small">详情</Button>
@@ -179,10 +191,12 @@ const Schedule: React.FC = () => {
                       <div key={hour} className="calendar-cell">
                         {course && course.hour === hour && (
                           <Popover
-                            content={renderCoursePopover(course)}
+                            content={renderCoursePopover(course, () => setOpenPopoverId(null))}
                             title={null}
                             trigger="click"
                             placement="topLeft"
+                            open={openPopoverId === course.id}
+                            onOpenChange={(open) => handlePopoverChange(open, course.id)}
                             overlayClassName="course-popover-overlay"
                           >
                             <Badge
@@ -193,6 +207,7 @@ const Schedule: React.FC = () => {
                                 background: course.color,
                                 borderColor: course.color,
                               }}
+                              onClick={(e) => e.stopPropagation()}
                             />
                           </Popover>
                         )}
