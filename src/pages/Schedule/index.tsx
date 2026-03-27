@@ -199,16 +199,17 @@ const Schedule: React.FC = () => {
                             onOpenChange={(open) => handlePopoverChange(open, course.id)}
                             overlayClassName="course-popover-overlay"
                           >
-                            <Badge
-                              color={course.color}
-                              text={`${course.title}\n${course.time}`}
-                              className="course-badge"
-                              style={{
-                                background: course.color,
-                                borderColor: course.color,
-                              }}
-                              onClick={(e) => e.stopPropagation()}
-                            />
+                            <div className="course-badge-wrapper" style={{ cursor: 'pointer' }}>
+                              <Badge
+                                color={course.color}
+                                text={`${course.title}\n${course.time}`}
+                                className="course-badge"
+                                style={{
+                                  background: course.color,
+                                  borderColor: course.color,
+                                }}
+                              />
+                            </div>
                           </Popover>
                         )}
                       </div>
