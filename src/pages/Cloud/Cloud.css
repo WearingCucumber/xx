@@ -1,0 +1,79 @@
+.cloud-page {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cloud-card {
+  min-height: calc(100vh - 200px);
+}
+
+.cloud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cloud-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cloud-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.storage-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.storage-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.cloud-filters {
+  margin-bottom: 20px;
+}
+
+.file-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-icon {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.file-icon.folder {
+  color: #f59e0b;
+}
+
+/* 浅色模式调整 */
+.light-theme .cloud-card {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}

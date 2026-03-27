@@ -1,0 +1,67 @@
+.apply-page {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.apply-card {
+  min-height: calc(100vh - 200px);
+}
+
+.apply-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.apply-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.apply-filters {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--bg-container);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+}
+
+.filter-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.reject-reason {
+  color: var(--error);
+  font-size: 13px;
+}
+
+.text-success {
+  color: var(--success) !important;
+}
+
+.text-error {
+  color: var(--error) !important;
+}
+
+/* 浅色模式调整 */
+.light-theme .apply-filters {
+  background: #f8fafc;
+}

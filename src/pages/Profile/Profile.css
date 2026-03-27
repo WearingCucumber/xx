@@ -1,0 +1,176 @@
+.profile-page {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-card {
+  min-height: calc(100vh - 200px);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile-header-section {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 24px;
+  background: var(--bg-container);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.profile-avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-avatar {
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+}
+
+.avatar-upload-btn {
+  border-radius: var(--radius-lg);
+}
+
+.profile-info-preview {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.profile-role {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0 0 16px 0;
+}
+
+.profile-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-contact span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+/*  Tab 按钮 */
+.profile-tabs {
+  margin-top: 24px;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0;
+}
+
+.tab-buttons button {
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  margin-bottom: -2px;
+}
+
+.tab-buttons button.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.tab-buttons button:hover {
+  color: var(--primary);
+}
+
+/* 表单样式 */
+.tab-content {
+  padding: 24px 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.info-form .ant-form-item,
+.password-form .ant-form-item {
+  margin-bottom: 20px;
+}
+
+.info-form .ant-input,
+.password-form .ant-input {
+  border-radius: var(--radius-lg);
+}
+
+.password-form {
+  max-width: 400px;
+}
+
+/* 头像上传 */
+.avatar-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-secondary);
+}
+
+.avatar-upload .anticon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .profile-header-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-info-preview {
+    text-align: center;
+  }
+
+  .profile-contact {
+    align-items: center;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 浅色模式调整 */
+.light-theme .profile-card {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}

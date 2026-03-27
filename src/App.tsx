@@ -6,6 +6,15 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import Students from './pages/Students';
 import Homework from './pages/Homework';
+import Classes from './pages/Classes';
+import Schedule from './pages/Schedule';
+import QuestionBank from './pages/QuestionBank';
+import Teaching from './pages/Teaching';
+import Cloud from './pages/Cloud';
+import Apply from './pages/Apply';
+import Todo from './pages/Todo';
+import Ideas from './pages/Ideas';
+import Profile from './pages/Profile';
 import './styles/theme.css';
 
 // 深色主题配置
@@ -126,16 +135,15 @@ function AppContent() {
             <Route index element={<Home />} />
             <Route path="students" element={<Students />} />
             <Route path="homework" element={<Homework />} />
-            {/* 占位页面 */}
-            <Route path="classes" element={<PlaceholderPage title="班级模块" />} />
-            <Route path="schedule" element={<PlaceholderPage title="课表模块" />} />
-            <Route path="question-bank" element={<PlaceholderPage title="题库模块" />} />
-            <Route path="teaching" element={<PlaceholderPage title="教研模块" />} />
-            <Route path="cloud" element={<PlaceholderPage title="云盘模块" />} />
-            <Route path="apply" element={<PlaceholderPage title="申请模块" />} />
-            <Route path="todo" element={<PlaceholderPage title="待办事项" />} />
-            <Route path="ideas" element={<PlaceholderPage title="创意中心" />} />
-            <Route path="profile" element={<PlaceholderPage title="个人中心" />} />
+            <Route path="classes" element={<Classes />} />
+            <Route path="schedule" element={<Schedule />} />
+            <Route path="question-bank" element={<QuestionBank />} />
+            <Route path="teaching" element={<Teaching />} />
+            <Route path="cloud" element={<Cloud />} />
+            <Route path="apply" element={<Apply />} />
+            <Route path="todo" element={<Todo />} />
+            <Route path="ideas" element={<Ideas />} />
+            <Route path="profile" element={<Profile />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

@@ -1,0 +1,143 @@
+.ideas-page {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ideas-card {
+  min-height: calc(100vh - 200px);
+}
+
+.ideas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.ideas-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ideas-intro {
+  background: var(--bg-container);
+  padding: 20px 24px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.ideas-intro p {
+  margin: 0 0 12px 0;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.ideas-intro ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+}
+
+.ideas-intro li {
+  margin-bottom: 8px;
+}
+
+.ideas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.idea-card {
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: all var(--transition-base);
+}
+
+.idea-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
+  transform: translateY(-4px);
+}
+
+.idea-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.idea-title-main {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  flex: 1;
+}
+
+.idea-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.votes {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.status {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: var(--radius-md);
+}
+
+.status.completed {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.status.reviewing {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+}
+
+.status.planned {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
+}
+
+.idea-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.idea-actions {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* 浅色模式调整 */
+.light-theme .idea-card:hover {
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.1);
+}

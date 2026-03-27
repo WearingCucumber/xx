@@ -1,0 +1,308 @@
+.classes-page {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 班级列表卡片 */
+.classes-list-card {
+  margin-bottom: 24px;
+}
+
+.classes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.classes-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.classes-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.classes-search {
+  border-radius: var(--radius-lg);
+}
+
+.classes-filter {
+  border-radius: var(--radius-lg);
+}
+
+/* 班级网格 */
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.class-card {
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.class-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.2);
+  transform: translateY(-4px);
+}
+
+.class-card-header {
+  margin-bottom: 12px;
+}
+
+.class-card-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.class-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+
+.class-card-students {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.student-count {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* 班级详情弹窗 */
+.class-detail-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+  backdrop-filter: blur(4px);
+}
+
+.class-detail-card {
+  width: 90%;
+  max-width: 900px;
+  max-height: 85vh;
+  overflow: auto;
+  border-radius: var(--radius-2xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.class-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.class-detail-header .close-btn {
+  font-size: 24px;
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+}
+
+.class-detail-header .close-btn:hover {
+  color: var(--error);
+}
+
+.class-detail-tabs {
+  margin-top: 16px;
+}
+
+.class-detail-tabs .ant-tabs-tab {
+  font-weight: 500;
+}
+
+/* 概览标签页 */
+.class-overview {
+  padding: 20px 0;
+}
+
+.overview-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 24px;
+  background: var(--bg-container);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  transition: all var(--transition-base);
+}
+
+.stat-item:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* 作业标签页 */
+.class-homework {
+  display: flex;
+  gap: 24px;
+}
+
+.homework-content {
+  flex: 1;
+  min-height: 300px;
+}
+
+.quick-actions {
+  width: 280px;
+  padding: 20px;
+  background: var(--bg-container);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  height: fit-content;
+}
+
+.quick-actions h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+}
+
+.quick-homework-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quick-homework-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-width: 1.5px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  transition: all var(--transition-base);
+  font-weight: 500;
+}
+
+.quick-homework-btn:hover {
+  background: var(--primary);
+  color: #fff !important;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.homework-actions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.homework-actions .ant-btn {
+  justify-content: flex-start;
+}
+
+/* 课表标签页 */
+.class-schedule {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 反馈标签页 */
+.class-feedback {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 作业大纲标签页 */
+.class-syllabus {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .classes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .class-homework {
+    flex-direction: column;
+  }
+
+  .quick-actions {
+    width: 100%;
+  }
+}
+
+/* 浅色模式调整 */
+.light-theme .class-card:hover {
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
+}
+
+.light-theme .class-detail-modal {
+  background: rgba(0, 0, 0, 0.5);
+}
